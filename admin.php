@@ -26,14 +26,14 @@ session_start();
 </head>
 <body>
   <div align="center" class="bg-dark text-light pt-4 pb-4">
-    <a href="Home.php"><button style="float: right;">LOGOUT</button></a>
+    <a href="Mentors.php"><button style="float: right;">LOGOUT</button></a>
     <h1>WELCOME TO ADMIN DASHBOARD</h1>  
   </div>
 
 
   <div class="text-light abc">
     <div class="text-center mt-5 pt-5" >
-      <h1>ADD NEW MENTION</h1>
+      <h1>ADD NEW MENTOR</h1>
     </div>
 
     <table align="center" style="margin-top: 50px; margin-right: 400px;" cellpadding="3">
@@ -57,7 +57,7 @@ session_start();
             <tr>
           <td>Mentor Image</td>
           <td>
-            <input type=file name="mentor_image" required>
+            <input type= file name="mentor_image" required>
           </td>
           </td>
         </tr>
@@ -70,6 +70,10 @@ session_start();
           </td>
         
       </form>
+
+
+      <tr>
+           
     </table>
   </div>
 

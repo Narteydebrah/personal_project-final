@@ -2,7 +2,7 @@
 /* log in form */
 
 
-.form{
+.form1{
   width: 200px;
   height: 420px;
   background: linear-gradient(to top, rgba(90, 78, 78, 0.8)50%,rgba(90, 78, 78, 0.8)50%);
@@ -17,7 +17,7 @@
 
 
 
-.form .input{
+.form1 .input{
   width: 240px;
   height: 35px;
   background: transparent;
@@ -32,7 +32,7 @@
   font-family: sans-serif;
 }
 
-.form .input:focus{
+.form1 .input:focus{
   outline: none;
 }
 
@@ -64,14 +64,14 @@
   color: #000;
   font-weight: bold;
 }
-.form .link{
+.form1 .link{
   font-family: Arial, Helvetica, sans-serif;
   font-size: 17px;
   padding-top: 20px;
   text-align: center;
 }
 
-.form .link a{
+.form1 .link a{
   text-decoration: none;
   color: rgb(57, 94, 218);
 }

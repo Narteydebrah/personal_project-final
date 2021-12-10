@@ -12,7 +12,7 @@
     <title>Home</title>
     <link rel="stylesheet" href="login.css" media="screen">
     <link rel="stylesheet" href="nicepage.css" media="screen">
-<link rel="stylesheet" href="Home.css" media="screen">
+    <link rel="stylesheet" href="Home.css" media="screen">
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
     <meta name="generator" content="Nicepage 4.0.3, nicepage.com">
@@ -71,16 +71,16 @@
 
         <!-- form login  -->
          <!-- form login  -->
-        <form action="login.php" method="POST"> 
-          <div class="form" >
+        <form action="Mentors.php" method="POST"> 
+          <div class="form1" >
               <h2>Login Here</h2>
               
-              <input type="email" id="email" name="email" placeholder="Enter Email Here">
-              <input type="password" id="password" name="password" placeholder="Enter Password Here">
+              <input type="email" id="email" name="user_email" placeholder="Enter Email Here">
+              <input type="password"  name="user_password" placeholder="Enter Password Here">
               <button name= "login_user"class="btnn">Login</a></button>
           
               <p class="link">Don't have an account<br>
-                  <a href="sign_up.php">Sign up </a> here</a>
+                  <a href="sign_up.php"> Sign up </a> here</a>
               </p>
     
 

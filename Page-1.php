@@ -3,7 +3,8 @@
 
 include ('database_connection.php');
 include ('rating.php');
-include ('mentor_CRUD.php');
+
+
 
 
 ?>
@@ -54,7 +55,7 @@ include ('mentor_CRUD.php');
           </div>
           <div class="u-nav-container">
             <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Home.php" style="padding: 10px 20px;">Home</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Contact.php" style="padding: 10px 20px;">Contact</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Mentors.php" style="padding: 10px 20px;">Contact</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Page-1.php" style="padding: 10px 20px;">Page 1</a>
 </li></ul>
           </div>
@@ -63,7 +64,7 @@ include ('mentor_CRUD.php');
               <div class="u-inner-container-layout u-sidenav-overflow">
                 <div class="u-menu-close"></div>
                 <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.php">Home</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Contact.php">Contact</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Mentors.php">Contact</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Page-1.php">Page 1</a>
 </li></ul>
               </div>
@@ -75,7 +76,8 @@ include ('mentor_CRUD.php');
     <section class="u-clearfix u-section-1" id="carousel_3e17">
       <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-palette-2-dark-2 u-shape u-shape-rectangle u-shape-1"></div>
-        <img class="u-image u-image-1" src=" <?php echo $row['mentor_image'];  ?>" data-image-width="720" data-image-height="1080">
+        <img class="u-image u-image-1" src="images/pexels-photo-9794893.jpeg" alt="">
+
         <div class="u-container-style u-group u-group-1">
           <div class="u-container-layout u-valign-middle-lg u-valign-middle-xl u-valign-top-md u-valign-top-sm u-valign-top-xs u-container-layout-1">
             <div class="Contacts">
@@ -84,18 +86,39 @@ include ('mentor_CRUD.php');
            
             <p class="u-text u-text-1"> <h3>Find Mentor Info</h3>
              
+             <div class="container">
+                        <div class="row">
+                            <?php
+
+                            include 'database_connection.php';
+
+
+                            $sel = "SELECT * FROM mentor_details";
+                            $que = mysqli_query($conn1, $sel);
+
+
+                            while ($row = mysqli_fetch_array($que)) {
+                            ?>
+
+
+
+
               <br><h4>Contacts</h4>&nbsp;<br>
               <br><h4>Name:  <?php echo $row['mentor_name'];  ?></h4>&nbsp;<br>
-              <br><h4>Phone:  <?php echo $row['mentor_phone'];  ?></h4>&nbsp;<br>
+              <br><h4>Phone:  <?php echo $row['mentor_contact'];  ?></h4>&nbsp;<br>
               <br><h4>Email:  <?php echo $row['mentor_email'];  ?></h4>&nbsp;<br>
+              <?php  }  ?>
               <div align="center" style="background: #000; padding: 50px;color:white;">
                <br><h3>Rate Your Mentor</h3>&nbsp;<br>
+
+           
 
         <i class="fa fa-star fa-2x" data-index="0"></i>
         <i class="fa fa-star fa-2x" data-index="1"></i>
         <i class="fa fa-star fa-2x" data-index="2"></i>
         <i class="fa fa-star fa-2x" data-index="3"></i>
         <i class="fa fa-star fa-2x" data-index="4"></i>
+        <button name= "save"class="btnn" > Save Rating</a></button>
         <br><br>
         
     </div>
@@ -134,7 +157,7 @@ include ('mentor_CRUD.php');
 
         function saveToTheDB() {
             $.ajax({
-               url: "index.php",
+               url: "database_connection.php",
                method: "POST",
                dataType: 'json',
                data: {
@@ -181,7 +204,7 @@ include ('mentor_CRUD.php');
           </div>
           <div class="u-nav-container">
             <ul class="u-nav u-unstyled"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.php">Home</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Contact.php">Contact</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Mentors.php">Contact</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Page-1.php">Page 1</a>
 </li></ul>
           </div>
@@ -190,7 +213,7 @@ include ('mentor_CRUD.php');
               <div class="u-inner-container-layout u-sidenav-overflow">
                 <div class="u-menu-close"></div>
                 <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.php">Home</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Contact.php">Contact</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Mentors.php">Contact</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Page-1.php">Page 1</a>
 </li></ul>
               </div>
@@ -200,15 +223,8 @@ include ('mentor_CRUD.php');
         </nav>
       </div></footer>
     <section class="u-backlink u-clearfix u-grey-80">
-      <a class="u-link" href="https://nicepage.com/website-templates" target="_blank">
-        <span>Website Templates</span>
-      </a>
-      <p class="u-text">
-        <span>created with</span>
-      </p>
-      <a class="u-link" href="" target="_blank">
-        <span>Website Builder Software</span>
-      </a>. 
+    
+  
     </section>
   </body>
 </html>

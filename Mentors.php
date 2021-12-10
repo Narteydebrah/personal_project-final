@@ -11,10 +11,10 @@ include ('database_connection.php');
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="INTUITIVE">
+ 
     <meta name="description" content="">
     <meta name="page_type" content="np-template-header-footer-from-plugin">
-    <title>Contact</title>
+    <title>Mentors</title>
     <link rel="stylesheet" href="mentor.css" media="screen">
     <link rel="stylesheet" href="nicepage.css" media="screen">
 
@@ -49,7 +49,7 @@ include ('database_connection.php');
           </div>
           <div class="u-nav-container">
             <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Home.php" style="padding: 10px 20px;">Home</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Contact.php" style="padding: 10px 20px;">Contact</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Mentors.php" style="padding: 10px 20px;">Mentors</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Page-1.php" style="padding: 10px 20px;">Page 1</a>
 </li></ul>
           </div>
@@ -58,7 +58,7 @@ include ('database_connection.php');
               <div class="u-inner-container-layout u-sidenav-overflow">
                 <div class="u-menu-close"></div>
                 <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.php">Home</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Contact.php">Contact</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Mentors.php">Mentors</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Page-1.php">Page 1</a>
 </li></ul>
               </div>
@@ -76,22 +76,32 @@ include ('database_connection.php');
       <div class="container">
           <div class="row">
               <?php
-                include 'database_connection.php';
+            include 'database_connection.php';
+
                   $sel = "SELECT * FROM mentor_details";
                       $que = mysqli_query($conn1, $sel);
                          while ($row = mysqli_fetch_array($que)) {
                             ?>
-                  <article>
-                    <img src = " <?php echo $row['mentor_image'];  ?>" alt="">
+                                <img src = " images/pexels-photo-9794893.jpeg" alt="">
+
+                    <
+                    <?php
+                            }
+                          ?>
+                                    
+                  
+
+            <img src = " images/man2.jfif" alt="">
+            <img src = " images/man3.jfif" alt="">
+            <img src = " images/gfgg.jfif" alt="">
+            <img src = " images/manFirst.jfif" alt="">
                     <div class="text">
                       <h3>Mentor</h3>
                       <p>First of his kind</p>
                       <button onclick="window.location.href='Page-1.php';"> View</button>
                                                  
      
-                        <?php
-                            }
-                            ?>
+                     
                     </div>
            </div> 
     
@@ -139,7 +149,7 @@ include ('database_connection.php');
           </div>
           <div class="u-nav-container">
             <ul class="u-nav u-unstyled"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.php">Home</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Contact.php">Contact</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Mentors.php">Mentors</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Page-1.php">Page 1</a>
 </li></ul>
           </div>
@@ -148,7 +158,7 @@ include ('database_connection.php');
               <div class="u-inner-container-layout u-sidenav-overflow">
                 <div class="u-menu-close"></div>
                 <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.php">Home</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Contact.php">Contact</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Mentors.php">Mentors</a>
 
 </li></ul>
               </div>
