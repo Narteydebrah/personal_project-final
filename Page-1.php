@@ -2,6 +2,8 @@
 <?php
 
 include ('database_connection.php');
+include ('rating.php');
+include ('mentor_CRUD.php');
 
 
 ?>
@@ -18,6 +20,8 @@ include ('database_connection.php');
     <title>Page 1</title>
     <link rel="stylesheet" href="nicepage.css" media="screen">
 <link rel="stylesheet" href="Page-1.css" media="screen">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" >
+
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
     <meta name="generator" content="Nicepage 4.0.3, nicepage.com">
@@ -71,7 +75,7 @@ include ('database_connection.php');
     <section class="u-clearfix u-section-1" id="carousel_3e17">
       <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-palette-2-dark-2 u-shape u-shape-rectangle u-shape-1"></div>
-        <img class="u-image u-image-1" src="images/manFirst.jfif" data-image-width="720" data-image-height="1080">
+        <img class="u-image u-image-1" src=" <?php echo $row['mentor_image'];  ?>" data-image-width="720" data-image-height="1080">
         <div class="u-container-style u-group u-group-1">
           <div class="u-container-layout u-valign-middle-lg u-valign-middle-xl u-valign-top-md u-valign-top-sm u-valign-top-xs u-container-layout-1">
             <div class="Contacts">
@@ -81,10 +85,78 @@ include ('database_connection.php');
             <p class="u-text u-text-1"> <h3>Find Mentor Info</h3>
              
               <br><h4>Contacts</h4>&nbsp;<br>
-              <br><h4>Name: Daniel James</h4>&nbsp;<br>
-              <br><h4>Phone: phone number here</h4>&nbsp;<br>
-              <br><h4>Email: Email goes there</h4>&nbsp;<br>
+              <br><h4>Name:  <?php echo $row['mentor_name'];  ?></h4>&nbsp;<br>
+              <br><h4>Phone:  <?php echo $row['mentor_phone'];  ?></h4>&nbsp;<br>
+              <br><h4>Email:  <?php echo $row['mentor_email'];  ?></h4>&nbsp;<br>
+              <div align="center" style="background: #000; padding: 50px;color:white;">
+               <br><h3>Rate Your Mentor</h3>&nbsp;<br>
 
+        <i class="fa fa-star fa-2x" data-index="0"></i>
+        <i class="fa fa-star fa-2x" data-index="1"></i>
+        <i class="fa fa-star fa-2x" data-index="2"></i>
+        <i class="fa fa-star fa-2x" data-index="3"></i>
+        <i class="fa fa-star fa-2x" data-index="4"></i>
+        <br><br>
+        
+    </div>
+
+    <script src="http://code.jquery.com/jquery-3.4.0.min.js" ></script>
+    <script>
+        var ratedIndex = -1, uID = 0;
+
+        $(document).ready(function () {
+            resetStarColors();
+
+            if (localStorage.getItem('ratedIndex') != null) {
+                setStars(parseInt(localStorage.getItem('ratedIndex')));
+                uID = localStorage.getItem('uID');
+            }
+
+            $('.fa-star').on('click', function () {
+               ratedIndex = parseInt($(this).data('index'));
+               localStorage.setItem('ratedIndex', ratedIndex);
+               saveToTheDB();
+            });
+
+            $('.fa-star').mouseover(function () {
+                resetStarColors();
+                var currentIndex = parseInt($(this).data('index'));
+                setStars(currentIndex);
+            });
+
+            $('.fa-star').mouseleave(function () {
+                resetStarColors();
+
+                if (ratedIndex != -1)
+                    setStars(ratedIndex);
+            });
+        });
+
+        function saveToTheDB() {
+            $.ajax({
+               url: "index.php",
+               method: "POST",
+               dataType: 'json',
+               data: {
+                   save: 1,
+                   uID: uID,
+                   ratedIndex: ratedIndex
+               }, success: function (r) {
+                    uID = r.id;
+                    localStorage.setItem('uID', uID);
+               }
+            });
+        }
+
+        function setStars(max) {
+            for (var i=0; i <= max; i++)
+                $('.fa-star:eq('+i+')').css('color', 'green');
+        }
+
+        function resetStarColors() {
+            $('.fa-star').css('color', 'white');
+        }
+    </script>
             </p>
             <a href="https://nicepage.com/website-design" class="u-active-white u-border-1 u-border-active-white u-border-black u-border-hover-white u-btn u-button-style u-custom-font u-font-montserrat u-hover-white u-none u-text-active-black u-text-body-color u-text-hover-palette-2-base u-btn-1">learn more</a>
             </div>

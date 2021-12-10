@@ -73,16 +73,25 @@ include ('database_connection.php');
       <img class="u-expanded-width u-image u-image-1" src="images/cfv-min.jpg" data-image-width="1980" data-image-height="1320">
       <h1 class="titleMentor">VIEW TRADERS</h1>
 
-           <div class="container">
-                <main class ="grid1">
+      <div class="container">
+          <div class="row">
+              <?php
+                include 'database_connection.php';
+                  $sel = "SELECT * FROM mentor_details";
+                      $que = mysqli_query($conn1, $sel);
+                         while ($row = mysqli_fetch_array($que)) {
+                            ?>
                   <article>
-                    <img src = "images/manFirst.jfif" alt="">
+                    <img src = " <?php echo $row['mentor_image'];  ?>" alt="">
                     <div class="text">
                       <h3>Mentor</h3>
                       <p>First of his kind</p>
-                      <button onclick="window.location.href='Page-1.php';">
-      View
-    </button>
+                      <button onclick="window.location.href='Page-1.php';"> View</button>
+                                                 
+     
+                        <?php
+                            }
+                            ?>
                     </div>
            </div> 
     

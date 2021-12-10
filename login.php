@@ -7,7 +7,10 @@ $conn1=mysqli_connect("localhost", "root", "", "personal_project");
 
 
 
-
+ // validate email with regex
+ $regex = "/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix";
+ // set error if not an email
+ if(!preg_match($regex, $email)){array_push($errors, "enter a valid email");}
 
 if(isset($_POST['login_user'])){
   
