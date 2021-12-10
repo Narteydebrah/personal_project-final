@@ -1,0 +1,72 @@
+
+
+.titleMentor{
+    color: black;
+
+
+
+}
+.grid1{
+    margin: 80px;
+    display: grid1;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 20px;
+    align-items: center;
+  
+  }
+  .grid1 > article{
+    background: white;
+    border: none;
+    box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    text-align: center;
+    width: 250px;
+    transition: transform .3s;
+  }
+  .grid1 > article:hover{
+    transform: translateY(5px);
+    box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.2);
+  }
+  
+  .grid1 > article img{
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  
+  
+  }
+  
+  .text{
+  color: black;
+    padding: 0 20px 200x;
+  }
+  
+  .text h3{
+    text-transform: uppercase;
+  
+  }
+  text button{
+    background: cyan;
+    border-radius: 20ox;
+    border: none;
+    color: black;
+    padding: 10px;
+    width:100%;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  @media(max-width: 769px){
+    .grid1{
+      grid-template-columns: repeat(2,1fr);
+    }
+  }
+  
+  @media(max-width: 500px){
+    .grid1{
+      grid-template-columns: repeat(1,1fr);
+  }
+  .grid1 > article{
+    text-align: center;
+  }
+  }
