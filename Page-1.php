@@ -74,11 +74,20 @@ include ('database_connection.php');
         <img class="u-image u-image-1" src="images/manFirst.jfif" data-image-width="720" data-image-height="1080">
         <div class="u-container-style u-group u-group-1">
           <div class="u-container-layout u-valign-middle-lg u-valign-middle-xl u-valign-top-md u-valign-top-sm u-valign-top-xs u-container-layout-1">
-            <p class="u-text u-text-1">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.<br>
-              <br>
-              <br>Sit amet massa vitae tortor condimentum lacinia quis. Ornare arcu dui vivamus arcu felis bibendum ut. Consectetur adipiscing elit duis tristique sollicitudin. Volutpat lacus laoreet non curabitur. Magna fringilla urna porttitor rhoncus. Ultricies leo integer malesuada nunc vel risus commodo viverra. Ipsum a arcu cursus vitae congue. Imperdiet dui accumsan sit amet nulla facilisi. Tincidunt dui ut ornare lectus sit. Phasellus faucibus scelerisque eleifend donec pretium vulputate sapien nec.&nbsp;Eget gravida cum sociis natoque.&nbsp;<br>
+            <div class="Contacts">
+
+
+           
+            <p class="u-text u-text-1"> <h3>Find Mentor Info</h3>
+             
+              <br><h4>Contacts</h4>&nbsp;<br>
+              <br><h4>Name: Daniel James</h4>&nbsp;<br>
+              <br><h4>Phone: phone number here</h4>&nbsp;<br>
+              <br><h4>Email: Email goes there</h4>&nbsp;<br>
+
             </p>
             <a href="https://nicepage.com/website-design" class="u-active-white u-border-1 u-border-active-white u-border-black u-border-hover-white u-btn u-button-style u-custom-font u-font-montserrat u-hover-white u-none u-text-active-black u-text-body-color u-text-hover-palette-2-base u-btn-1">learn more</a>
+            </div>
           </div>
         </div>
       </div>
